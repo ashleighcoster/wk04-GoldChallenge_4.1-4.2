@@ -18,6 +18,27 @@
 
 // Create a polygon with side lengths 3, 3, 8, and 8
 
+// Print the perimeter
+
+class Polygon {
+    constructor(sides) {
+        this.sides = sides;
+    }
+  
+    perimeter() {
+      return this.sides.reduce((sum, side) => sum + side, 0);
+    }
+}
+  
+  const polygon = new Polygon([3, 3, 8, 8]);
+  const square = new Polygon([10, 10, 10, 10]);
+   
+  console.log(polygon.perimeter());
+  console.log(square.perimeter());
+ 
+
+
 
   
-// Print the perimeter
+
+  
