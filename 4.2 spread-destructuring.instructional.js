@@ -18,38 +18,40 @@ clothing: [],
 grocery: []
 };
 
-let [[a, b, c], [d, e, f], [g, h, i], [j, k, l]] = shoppingList;
-console.log(a);
-console.log(b);
-console.log(c);
-console.log(d);
-console.log(e);
-console.log(f);
-console.log(g);
-console.log(h);
-console.log(i);
-console.log(j);
-console.log(k);
-console.log(l);
-//console.logged these to check and make sure each value/variable was returning correctly 
 
-let shoppingListToo = [a, b, c, d, e, f, g, h, i, j, k, l];
-//it wouldn't let me rename it 'shoppingList'
-console.log(shoppingListToo);
+let food = shoppingList[0]; 
+console.log(food);
+let cleaningSupplies = shoppingList[1]; 
+let stationary = shoppingList[2]; 
+let clothes = shoppingList[3];
 
-let newObj = shoppingListToo.map(function(item, index) {
-    
-    obj.cleaning.push(d, e, f);
-    obj.gifts.push(g, h, i);
-    obj.clothing.push(j, k, l);
-    obj.grocery.push(a, b, c);
+shoppingList = [...food, ...cleaningSupplies, ...stationary, ...clothes];
 
-})
+console.log(shoppingList)
 
-console.log(obj.cleaning[0]); //returns 'cleaner'
-console.log(obj.gifts[1]); //returns 'pens'
-console.log(obj.clothing[0]); //returns 'shoes'
-console.log(obj.grocery[1]); //returns 'milk'
+let newObj = shoppingList.map(function(item, index) {
+    if (index == 0 || index == 1 || index == 2) {
+        obj.grocery.push(food);  
+    } else if (index == 3 || index == 4 || index == 5) {
+        obj.cleaning.push(cleaningSupplies);
+    } else if (index == 6 || index == 7 || index == 8) {
+        obj.gifts.push(stationary);
+    } else if (index == 9 || index == 10 || index == 11) {
+        obj.clothing.push(clothes);
+    } else {
+        return false; 
+    }
+}); 
+
+console.log(obj.cleaning[0]); 
+console.log(obj.gifts[0]); 
+console.log(obj.clothing[0]); 
+console.log(obj.grocery[0]); 
+
+
+
+
+
 
 
 
